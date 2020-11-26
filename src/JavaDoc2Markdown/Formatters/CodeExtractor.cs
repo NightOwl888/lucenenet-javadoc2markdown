@@ -31,7 +31,7 @@ namespace JavaDocToMarkdownConverter.Formatters
         private const string Start = "using ";
         private const string End = "}";
         private static readonly Regex Ns = new Regex(@"^namespace\s+?([\w\.\s]+?)\s", RegexOptions.Compiled | RegexOptions.Multiline);
-        private static readonly Regex Class = new Regex(@"public class\s+?([\w\.\s]+?)\s", RegexOptions.Compiled | RegexOptions.Multiline);
+        private static readonly Regex Class = new Regex(@"public (?:sealed )?class\s+?([\w\.]+)", RegexOptions.Compiled | RegexOptions.Multiline);
 
         public static string ExtractCode(FileInfo inputDoc)
         {
