@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>javadoc2markdown</ToolCommandName>
+    <PackageOutputPath>../../release/NuGetPackages</PackageOutputPath>
+
+    <PackageId>javadoc2markdown</PackageId>
+    <Description>JavaDoc to Markdown converter for Lucene.Net from The Apache Software Foundation.</Description>
+    <PackageTags>javadoc;markdown</PackageTags>
+
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Copyright Info">
+    <Company>The Apache Software Foundation</Company>
+    <CurrentYear Condition=" '$(CurrentYear)' == '' ">$([System.DateTime]::UtcNow.Year.ToString())</CurrentYear>
+    <BeginCopyrightYear>2017</BeginCopyrightYear>
+    <CopyrightYearRange>$(BeginCopyrightYear) - $(CurrentYear)</CopyrightYearRange>
+    <CopyrightYearRange Condition=" '$(BeginCopyrightYear)' == '$(CurrentYear)' ">$(CurrentYear)</CopyrightYearRange>
+    <Copyright>Copyright © $(CopyrightYearRange) $(Company)</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Html2Markdown" Version="3.2.3.392"/>
+  </ItemGroup>
+
+</Project>
